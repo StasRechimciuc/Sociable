@@ -18,7 +18,6 @@ import { verifyToken } from "./middleware/auth.js";
 import User from "./models/User.js";
 import Post from "./models/Post.js";
 import { users, posts } from "./data/index.js";
-import { log } from "console";
 
 /* CONFIGURATIONS */
 const __filename = fileURLToPath(import.meta.url);
@@ -56,7 +55,8 @@ app.use("/posts", postRoutes);
 
 /* MONGOOSE SETUP */
 const PORT = process.env.PORT || 6001;
-const MONGO_URL = process.env.MONGO_URL;
+const MONGO_URL =
+  "mongodb+srv://stasrechimciumciuc:qwert54321_@social-app.f8drcf2.mongodb.net/test?retryWrites=true&w=majority";
 mongoose
   .connect(MONGO_URL, {
     useNewUrlParser: true,

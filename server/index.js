@@ -55,13 +55,12 @@ app.use("/posts", postRoutes);
 
 /* MONGOOSE SETUP */
 const PORT = process.env.PORT || 6001;
-const MONGO_URL =
-  "mongodb+srv://stasrechimciumciuc:qwert54321_@social-app.f8drcf2.mongodb.net/test?retryWrites=true&w=majority";
+// const MONGO_URL =
+// "mongodb+srv://stasrechimciumciuc:qwert54321_@social-app.f8drcf2.mongodb.net/test?retryWrites=true&w=majority";
 mongoose
-  .connect(MONGO_URL, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-  })
+  .connect(
+    "mongodb+srv://stasrechimciumciuc:qwert54321_@social-app.f8drcf2.mongodb.net/test?retryWrites=true&w=majority"
+  )
   .then(() => {
     app.listen(PORT, () => console.log(`Server Port: ${PORT}`));
     // console.log("MongoDB connected.");

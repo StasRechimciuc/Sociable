@@ -63,8 +63,8 @@ mongoose
     useUnifiedTopology: true,
   })
   .then(() => {
-    console.log("MongoDB connected.");
     app.listen(PORT, () => console.log(`Server Port: ${PORT}`));
+    // console.log("MongoDB connected.");
     /* ADD DATA ONE TIME */
     // User.insertMany(users);
     // Post.insertMany(posts);

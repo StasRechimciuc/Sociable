@@ -1,13 +1,14 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import { useTheme } from "@emotion/react";
-import { Button, Box } from "@mui/material";
+import { Button } from "@mui/material";
+import FlexBetween from "components/FlexBetween";
 const ErrorPage = () => {
   const navigate = useNavigate();
   const { palette } = useTheme();
 
   return (
-    <Box>
+    <FlexBetween>
       <h1>Page not found 404 Error</h1>
       <Button
         fullWidth
@@ -23,7 +24,7 @@ const ErrorPage = () => {
       >
         Back To Home
       </Button>
-    </Box>
+    </FlexBetween>
   );
 };
 

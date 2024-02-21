@@ -36,13 +36,7 @@ app.use(
 );
 app.use(
   cors({
-    origin: function (origin, callback) {
-      if (!origin || !origin.startsWith("https://sociable-demo.netlify.app")) {
-        callback(null, true);
-      } else {
-        callback(null, "https://sociable-demo.onrender.com");
-      }
-    },
+    origin: "*",
     methods: ["GET", "POST", "PATCH", "DELETE"],
     allowedHeaders: ["Content-Type", "Authorization"],
     credentials: true,

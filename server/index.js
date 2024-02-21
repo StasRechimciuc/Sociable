@@ -36,7 +36,7 @@ app.use(
 );
 app.use(
   cors({
-    origin: "*",
+    origin: "https://sociable-demo.onrender.com",
     methods: ["GET", "POST", "PATCH", "DELETE"],
     allowedHeaders: ["Content-Type", "Authorization"],
     credentials: true,
@@ -80,7 +80,3 @@ mongoose
   .catch((err) => {
     console.log(err);
   });
-
-app.get("/", async (req, res) => {
-  res.status(200).json({ message: "Hello" });
-});

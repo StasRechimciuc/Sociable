@@ -37,7 +37,7 @@ const PostWidget = ({
 
   const patchLike = async () => {
     const response = await fetch(
-      `https://sociable-demo.netlify.app/posts/${postId}/like`,
+      `https://sociable-demo.onrender.com/posts/${postId}/like`,
       {
         method: "PATCH",
         headers: {

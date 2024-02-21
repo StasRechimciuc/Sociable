@@ -16,7 +16,7 @@ const ProfilePage = () => {
 
   const getUser = async () => {
     const response = await fetch(
-      `https://sociable-demo.netlify.app/users/${userId}`,
+      `https://sociable-demo.onrender.com/users/${userId}`,
       {
         method: "GET",
         headers: { Authorization: `Bearer ${token}` },

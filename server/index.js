@@ -42,6 +42,7 @@ app.use(
     credentials: true,
   })
 );
+// err pt ca netlify da redirect la 404 page daca e refresh/rerender la page
 app.use(helmet.crossOriginResourcePolicy({ policy: "cross-origin" }));
 app.use(morgan("common"));
 app.use(bodyParser.json({ limit: "30mb", extended: true }));

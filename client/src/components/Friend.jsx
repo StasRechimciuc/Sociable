@@ -43,7 +43,6 @@ const Friend = ({ friendId, name, subtitle, userPicturePath }) => {
         <Box
           onClick={() => {
             navigate(`/user/${friendId}`);
-            navigate(0);
           }}
         >
           <Typography

@@ -1,5 +1,0 @@
-[[redirects]]
-  from = "/"
-  to = "https://sociable-demo.onrender.com"
-  status = 200
-  force = true

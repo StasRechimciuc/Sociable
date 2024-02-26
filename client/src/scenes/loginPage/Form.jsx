@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { BeatLoader } from "react-spinners";
 import {
   Box,
   Button,
@@ -49,6 +50,7 @@ const initialValuesLogin = {
 
 const Form = () => {
   const [pageType, setPageType] = useState("login");
+  const [loading, setLoading] = useState(false);
   const { palette } = useTheme();
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -103,9 +105,11 @@ const Form = () => {
   };
 
   const handleFormSubmit = async (values, onSubmitProps) => {
+    setLoading(true);
     if (isLogin) await login(values, onSubmitProps);
     if (isRegister) await register(values, onSubmitProps);
     if (isDemo) await login(values, onSubmitProps);
+    setLoading(false);
   };
 
   return (
@@ -349,6 +353,34 @@ const Form = () => {
               </Typography>
             </FlexBetween>
           </Box>
+          {loading && (
+            <Box
+              style={{
+                position: "fixed",
+                top: 0,
+                left: 0,
+                right: 0,
+                bottom: 0,
+                background: "rgba(0, 0, 0, 0.6)",
+                zIndex: 999,
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+              }}
+            >
+              <Typography
+                variant="h3"
+                color="white"
+                sx={{
+                  color: palette.primary.main,
+                  textAlign: "center",
+                }}
+              >
+                {loading && <h2>Pending request, please wait...</h2>}
+                <BeatLoader color="#36d7b7" size={20} />
+              </Typography>
+            </Box>
+          )}
         </form>
       )}
     </Formik>
